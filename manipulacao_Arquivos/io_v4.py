@@ -1,13 +1,14 @@
-#! python
+#! Python
+
+arquivo = open('pessoas.csv')
 
 try:
-    arquivo = open('pessoas.csv')
     for registro in arquivo:
-        print('Nome: {} Idade: {}'.format(*registro.strip().split(',')))
+        print('Nome: {}, Idade: {}'.format(*registro.strip().split(',')))
 
 finally:
-    print('finally')
+    print('Finally')
     arquivo.close()
 
 if arquivo.closed:
-    print('Arquivo já foi fechado')
+    print('Arquivo ja foi fechado')

@@ -1,16 +1,15 @@
-#! python
+#! Python
 
 import csv
 from urllib import request
 
 def read(url):
     with request.urlopen(url) as entrada:
-        print('Baixando o csv...')
+        print('Baixando...')
         dados = entrada.read().decode('latin1')
-        print('Download completo')
+        print('Arquivo completo!')
         for cidade in csv.reader(dados.splitlines()):
-            print(f'{cidade[8]}:{cidade[3]}')
-
+            print(f'{cidade[8]} : {cidade[3]}')
 
 
 if __name__ == '__main__':
